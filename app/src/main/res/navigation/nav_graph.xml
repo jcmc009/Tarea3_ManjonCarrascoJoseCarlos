@@ -8,5 +8,5 @@
         android:id="@+id/loginFragment"
         android:name="com.example.tarea3_manjoncarrascojosecarlos.ui.login.LoginFragment"
         android:label="fragment_login2"
-        tools:layout="@layout/fragment_login2" />
+        tools:layout="@layout/fragment_login" />
 </navigation>
