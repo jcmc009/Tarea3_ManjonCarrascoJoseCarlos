@@ -1,72 +1,99 @@
 package com.example.tarea3_manjoncarrascojosecarlos
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.credentials.provider.Action
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.tarea3_manjoncarrascojosecarlos.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class LoginFragment : Fragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Login.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Login : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
- 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    // Configuración de ViewBinding
+    private var _binding: FragmentLoginBinding? = null
+    private val binding get() = _binding!!
+
+    // Firebase
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
-
+    ): View {
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Login.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Login().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Inicializa Firebase Auth
+        auth = FirebaseAuth.getInstance()
+
+        // 2. IMPORTANTE: Habilitar el botón de Login (porque en tu XML está false)
+        binding.login.isEnabled = true
+
+        //  Lógica del botón LOGIN
+        binding.login.setOnClickListener {
+            val email = binding.username.text.toString()
+            val password = binding.password.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                // Mostrar cargando
+                binding.loading.visibility = View.VISIBLE
+                binding.login.isEnabled = false // Evitar doble click
+
+                // Intentar Login con Firebase
+                auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener { task ->
+                        // Ocultar cargando
+                        binding.loading.visibility = View.GONE
+                        binding.login.isEnabled = true
+
+                        if (task.isSuccessful) {
+                            Toast.makeText(context, "Login Correcto", Toast.LENGTH_SHORT).show()
+                            // Navegar a la pantalla principal (BlankFragment)
+                            try {
+                                findNavController().navigate(R.id.action_loginFragment_to_mainViewFragment)
+                            } catch (e: Exception) {
+                                Toast.makeText(
+                                    context,
+                                    "Error Nav: No encuentro blankFragment",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        } else {
+                            Toast.makeText(
+                                context,
+                                "Error: ${task.exception?.message}",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(context, "Escribe email y contraseña", Toast.LENGTH_SHORT).show()
             }
+        }
+
+        // Lógica del botón REGISTER
+        binding.register.setOnClickListener {
+            Toast.makeText(context, "Clic detectado", Toast.LENGTH_SHORT).show()
+            try {
+                // Navegar a la pantalla de registro
+                findNavController().navigate(R.id.registerFragment)
+
+            } catch (e: Exception) {
+                Toast.makeText(context, "Error de navegación", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
     }
 
-    private var _binding: FragmentLoginBinding? = null
-    private val binding get() = _binding!!
-
-
-
-
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
