@@ -80,7 +80,7 @@ class LoginFragment : Fragment() {
 
         // Lógica del botón REGISTER
         binding.register.setOnClickListener {
-            Toast.makeText(context, "Clic detectado", Toast.LENGTH_SHORT).show()
+           
             try {
                 // Navegar a la pantalla de registro
                 findNavController().navigate(R.id.registerFragment)
