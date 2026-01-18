@@ -32,4 +32,9 @@
     <string name="registrarse">Registrarse</string>
     <string name="volver_al_login">Volver al Login</string>
     <string name="contrase_a">Contraseña</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="men_lateral">Menú Lateral</string>
+    <string name="episodios">Episodios</string>
+    <string name="estad_sticas">Estadísticas</string>
 </resources>

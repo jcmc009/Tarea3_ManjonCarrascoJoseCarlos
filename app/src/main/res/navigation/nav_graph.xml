@@ -34,12 +34,25 @@
         android:id="@+id/mainViewFragment"
         android:name="com.example.tarea3_manjoncarrascojosecarlos.BlankFragment"
         android:label="Inicio"
-        tools:layout="@layout/fragment_blank" />
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_mainViewFragment_to_lateralMenuFragment"
+            app:destination="@id/lateralMenuFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/settings2"
         android:name="com.example.tarea3_manjoncarrascojosecarlos.Settings"
         android:label="Ajustes"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/lateralMenuFragment"
+        android:name="com.example.tarea3_manjoncarrascojosecarlos.LateralMenuFragment"
+        android:label="fragment_lateral_menu"
+        tools:layout="@layout/fragment_lateral_menu" >
+        <action
+            android:id="@+id/action_lateralMenuFragment_to_settings2"
+            app:destination="@id/settings2" />
+    </fragment>
 
 </navigation>
