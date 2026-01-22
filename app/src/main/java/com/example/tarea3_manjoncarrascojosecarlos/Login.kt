@@ -33,9 +33,6 @@ class LoginFragment : Fragment() {
         // Inicializa Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // 2. IMPORTANTE: Habilitar el botón de Login (porque en tu XML está false)
-        binding.login.isEnabled = true
-
         //  Lógica del botón LOGIN
         binding.login.setOnClickListener {
             val email = binding.username.text.toString()
