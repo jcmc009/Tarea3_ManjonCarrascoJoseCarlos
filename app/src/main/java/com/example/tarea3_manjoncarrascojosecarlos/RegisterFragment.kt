@@ -35,13 +35,13 @@ class RegisterFragment : Fragment() {
         // Inicializamos Firebase Auth
         auth = FirebaseAuth.getInstance()
 
-        // --- BOTÓN: REGISTRARSE (btn_do_register) ---
+        // --- BOTÓN: REGISTRARSE  ---
         binding.btnDoRegister.setOnClickListener {
             // Obtenemos los textos de los campos
 
-            val name = binding.etName.text.toString()
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
+            val name = binding.registerName.text.toString()
+            val email = binding.registerMail.text.toString()
+            val password = binding.registerPassword.text.toString()
 
             if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
                 // Función para crear usuario en Firebase

@@ -2,6 +2,7 @@ package com.example.tarea3_manjoncarrascojosecarlos
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -20,9 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    // HE BORRADO EL VIEWMODEL DE AQUÍ.
+    // La MainActivity solo gestiona la navegación, no los datos de la lista.
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        enableEdgeToEdge()
 
         auth = Firebase.auth
 
@@ -33,12 +38,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // --- Navegación ---
+        // Asegúrate de que en tu XML el ID sea nav_host_fragment
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
         // --- Configuración de las 3 Rayas ---
-
+        // R.id.mainViewFragment debe coincidir con el ID en tu nav_graph.xml
         appBarConfiguration = AppBarConfiguration(
             setOf(R.id.mainViewFragment),
             drawerLayout
@@ -60,9 +66,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+
+    } // <--- AQUÍ CIERRA EL ONCREATE. ¡IMPORTANTE!
 
     // --- Permite abrir el menú al pulsar el botón ---
+    // Esta función va FUERA del onCreate, al mismo nivel
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }

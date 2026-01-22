@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Rick y Morty app</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña</string>
@@ -13,19 +12,10 @@
     <string name="login_failed">"Login failed"</string>
     <string name="action_register">Registrarse</string>
     <!-- Preference Titles -->
-    <string name="messages_header">Ajustes</string>
-    <string name="sync_header">Idioma</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Tema</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="crear_cuenta">Crear Cuenta</string>
     <string name="nombre">Nombre</string>
     <string name="correo">Correo electrónico</string>
@@ -40,4 +30,11 @@
     <string name="escribe_email_y_contrase_a">Escribe email y contraseña</string>
     <string name="error_de_navegaci_n">Error de navegación</string>
     <string name="error_nav_no_encuentro_blankfragment">Error Nav: No encuentro blankFragment</string>
+    <string name="about">Desarrollado por:\nJosé Carlos Manjón Carrasco\n\nVersión: %1$s</string>
+    <string name="about_menu_name">Acerca de</string>
+    <string name="ir_a_episodios">Ir a Episodios</string>
+    <string name="ir_a_estad_sticas">Ir a Estadísticas</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="ingl_s_english">Inglés (English)</string>
+    <string name="idioma_language">Idioma / Language</string>
 </resources>

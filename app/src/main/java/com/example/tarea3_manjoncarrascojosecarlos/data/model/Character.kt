@@ -6,5 +6,5 @@ data class Character(
 )
 
 data class CharactersApiResponse(
-    val results: List<Episode>
+    val results: List<Character>
 )

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-// import androidx.navigation.fragment.findNavController // Descomenta cuando tengas las rutas
+import androidx.navigation.fragment.findNavController // Descomenta cuando tengas las rutas
 
 class LateralMenuFragment : Fragment() {
 
@@ -21,32 +21,43 @@ class LateralMenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Referencias a los textos
+
         val btnEpisodios = view.findViewById<TextView>(R.id.tv_episodios)
         val btnEstadisticas = view.findViewById<TextView>(R.id.tv_estadisticas)
         val btnAjustes = view.findViewById<TextView>(R.id.tv_ajustes)
         val btnAcercaDe = view.findViewById<TextView>(R.id.tv_acerca_de)
 
-        // 2. Configurar los clics
+
 
         btnEpisodios.setOnClickListener {
-            Toast.makeText(context, "Ir a Episodios", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.ir_a_episodios), Toast.LENGTH_SHORT).show()
             // findNavController().navigate(R.id.action_lateral_to_episodios)
         }
 
         btnEstadisticas.setOnClickListener {
-            Toast.makeText(context, "Ir a Estadísticas", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, getString(R.string.ir_a_estad_sticas), Toast.LENGTH_SHORT).show()
             // findNavController().navigate(R.id.action_lateral_to_estadisticas)
         }
 
         btnAjustes.setOnClickListener {
-            // Como Ajustes ya lo tenías en el nav_graph, este sí podríamos probarlo si quisieras
+
             Toast.makeText(context, "Ir a Ajustes", Toast.LENGTH_SHORT).show()
-          //  findNavController().navigate(R.id.action_lateralMenuFragment_to_settings2)
+            findNavController().navigate(R.id.settings)
         }
 
         btnAcercaDe.setOnClickListener {
-            Toast.makeText(context, "Ir a Acerca de", Toast.LENGTH_SHORT).show()
+
+            val versionName = "1.0.0"
+
+            // Construir el diálogo
+            androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                .setTitle(getString(R.string.about_menu_name)) // Título de la ventana
+                .setMessage(getString(R.string.about, versionName)) // El contenido
+                .setPositiveButton("Aceptar") { dialog, _ ->
+                    dialog.dismiss() // Cierra el diálogo al pulsar
+                }
+                .create()
+                .show()
         }
     }
 }
