@@ -58,7 +58,7 @@ class LoginFragment : Fragment() {
                             } catch (e: Exception) {
                                 Toast.makeText(
                                     context,
-                                    "Error Nav: No encuentro blankFragment",
+                                    getString(R.string.error_nav_no_encuentro_blankfragment),
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
@@ -71,7 +71,8 @@ class LoginFragment : Fragment() {
                         }
                     }
             } else {
-                Toast.makeText(context, "Escribe email y contraseña", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,
+                    getString(R.string.escribe_email_y_contrase_a), Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -83,7 +84,7 @@ class LoginFragment : Fragment() {
                 findNavController().navigate(R.id.registerFragment)
 
             } catch (e: Exception) {
-                Toast.makeText(context, "Error de navegación", Toast.LENGTH_SHORT)
+                Toast.makeText(context, getString(R.string.error_de_navegaci_n), Toast.LENGTH_SHORT)
                     .show()
             }
         }

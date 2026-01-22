@@ -37,4 +37,7 @@
     <string name="men_lateral">Menú Lateral</string>
     <string name="episodios">Episodios</string>
     <string name="estad_sticas">Estadísticas</string>
+    <string name="escribe_email_y_contrase_a">Escribe email y contraseña</string>
+    <string name="error_de_navegaci_n">Error de navegación</string>
+    <string name="error_nav_no_encuentro_blankfragment">Error Nav: No encuentro blankFragment</string>
 </resources>
