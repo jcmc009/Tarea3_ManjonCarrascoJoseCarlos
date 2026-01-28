@@ -61,6 +61,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 ```bash
 https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git
 
+---
 ## 💡 Conclusiones del desarrollador
 
 El desarrollo de esta práctica, así como el módulo de PMDM en general, está suponiendo un reto significativo debido a la **curva de aprendizaje** y al ritmo intensivo del curso. Sin embargo, considero que la tarea ha sido muy enriquecedora por varios motivos:
