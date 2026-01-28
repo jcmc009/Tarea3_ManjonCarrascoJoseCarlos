@@ -59,7 +59,7 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 **1. Clonar el repositorio:**
 ```bash
-https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git
+git clone [https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git](https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git)
 
 ---
 ## 💡 Conclusiones del desarrollador
