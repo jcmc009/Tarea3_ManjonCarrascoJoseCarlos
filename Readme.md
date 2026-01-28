@@ -52,7 +52,14 @@ El propósito principal de la aplicación es permitir a los usuarios gestionar s
 * **Almacenamiento Local:** SharedPreferences (para configuración de usuario).
 
 ---
+## 💡 Conclusiones del desarrollador
 
+El desarrollo de esta práctica, así como el módulo de PMDM en general, está suponiendo un reto significativo debido a la **curva de aprendizaje** y al ritmo intensivo del curso. Sin embargo, considero que la tarea ha sido muy enriquecedora por varios motivos:
+
+1.  **Interpretación de Documentación:** He mejorado notablemente mi capacidad para leer e implementar documentación técnica de terceros, fundamental para integrar servicios como **Firebase** y realizar el consumo de **APIs REST** públicas.
+2.  **Configuración de Entornos:** La configuración inicial de Firebase supuso un desafío técnico, ya que requiere una precisión absoluta en los archivos de configuración y credenciales para su correcto funcionamiento.
+3.  **Arquitectura y Organización:** A pesar de ser una aplicación aparentemente sencilla, el volumen de código y ficheros generados me ha obligado a ser meticuloso en la **organización del proyecto** y la coordinación de los distintos componentes.
+---
 ## 📲 Instrucciones de uso
 
 Sigue estos pasos para ejecutar el proyecto en tu entorno local:
@@ -62,10 +69,3 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 git clone [https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git](https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git)
 
 ---
-## 💡 Conclusiones del desarrollador
-
-El desarrollo de esta práctica, así como el módulo de PMDM en general, está suponiendo un reto significativo debido a la **curva de aprendizaje** y al ritmo intensivo del curso. Sin embargo, considero que la tarea ha sido muy enriquecedora por varios motivos:
-
-1.  **Interpretación de Documentación:** He mejorado notablemente mi capacidad para leer e implementar documentación técnica de terceros, fundamental para integrar servicios como **Firebase** y realizar el consumo de **APIs REST** públicas.
-2.  **Configuración de Entornos:** La configuración inicial de Firebase supuso un desafío técnico, ya que requiere una precisión absoluta en los archivos de configuración y credenciales para su correcto funcionamiento.
-3.  **Arquitectura y Organización:** A pesar de ser una aplicación aparentemente sencilla, el volumen de código y ficheros generados me ha obligado a ser meticuloso en la **organización del proyecto** y la coordinación de los distintos componentes.
