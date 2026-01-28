@@ -66,6 +66,4 @@ Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
 **1. Clonar el repositorio:**
  ```bash
-git clone https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git
-**2. Importar con Android Studio**
-**3. Ejecutar localmente**
+git clone https://github.com/jcmc009/Tarea3_ManjonCarrascoJoseCarlos.git ```
